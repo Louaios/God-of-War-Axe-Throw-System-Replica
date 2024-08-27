@@ -8,6 +8,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public event Action throwingEvent;
 
+    public event Action recallEvent;
+
     private Controls controls;
 
     [field: SerializeField] public bool isAiming {  get; private set; }
@@ -43,15 +45,22 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             isAiming= false;
         }
     }
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        
-    }
 
     public void OnThrow(InputAction.CallbackContext context)
     {
         if(!context.performed) { return; }
 
         throwingEvent?.Invoke();
+    }
+
+    public void OnRecall(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        recallEvent?.Invoke();
+    }
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        
     }
 }

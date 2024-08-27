@@ -16,6 +16,7 @@ public class PlayerAimingState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.InputReader.throwingEvent += OnThrow;
+        stateMachine.InputReader.recallEvent += OnAimingRecall;
     }
 
 
@@ -32,11 +33,18 @@ public class PlayerAimingState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.throwingEvent -= OnThrow;
+        stateMachine.InputReader.recallEvent -= OnAimingRecall;
     }
     private void OnThrow()
     {
         if(!stateMachine.AxeThrown)
              stateMachine.SwitchState(new PlayerThrowingState(stateMachine));
+    }
+    
+    private void OnAimingRecall()
+    {
+        if(stateMachine.AxeThrown)
+          stateMachine.RecallAxe();
     }
 
 }

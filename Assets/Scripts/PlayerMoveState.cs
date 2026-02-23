@@ -14,7 +14,8 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.animator.Play(moveHash);
+        stateMachine.animator.CrossFadeInFixedTime(moveHash, stateMachine.moveBlendTime);
+        stateMachine.InputReader.recallEvent += OnRecall;
     }
     public override void Tick(float deltaTime)
     {
@@ -39,7 +40,15 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void Exit()
     {
-        
+        stateMachine.InputReader.recallEvent -= OnRecall;
+    }
+
+    private void OnRecall()
+    {
+        if (stateMachine.AxeThrown)
+        {
+            stateMachine.SwitchState(new PlayerRecallState(stateMachine));
+        }
     }
 
     private Vector3 CalculateMovement()

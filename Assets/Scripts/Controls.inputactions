@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "Controls",
     "maps": [
         {
@@ -45,7 +46,7 @@
                     "name": "Recall",
                     "type": "Button",
                     "id": "1db4d8a5-359e-4967-a104-9637f0bfff71",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -198,7 +199,7 @@
                 {
                     "name": "",
                     "id": "d7b01a95-9ab8-43ed-9ad8-69b65aea2ef3",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -220,7 +221,7 @@
                 {
                     "name": "",
                     "id": "4b1e2e1f-1f0d-4fff-8832-94b89f2ae7f4",
-                    "path": "<Keyboard>/space",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",

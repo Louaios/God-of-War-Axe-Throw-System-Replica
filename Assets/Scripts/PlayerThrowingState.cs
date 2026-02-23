@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerThrowingState : PlayerBaseState
 {
     private readonly int throwHash = Animator.StringToHash("Throwing");
+    private bool hasThrown;
+    private bool hasFinished;
+    private bool animationStarted;
+    private float delayTimer;
 
     public PlayerThrowingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -12,18 +16,50 @@ public class PlayerThrowingState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.animator.Play(throwHash);
+        hasThrown = false;
+        hasFinished = false;
+        animationStarted = false;
+        delayTimer = 0f;
     }
     public override void Tick(float deltaTime)
     {
-        Debug.Log("is Throwing State");
-        //stateMachine.SwitchState(new PlayerAimingState(stateMachine));
+        if (!animationStarted)
+        {
+            delayTimer += deltaTime;
+            if (delayTimer < stateMachine.throwInputDelay)
+            {
+                return;
+            }
 
+            animationStarted = true;
+            stateMachine.animator.CrossFadeInFixedTime(throwHash, 0.05f);
+            return;
+        }
+
+        AnimatorStateInfo info = stateMachine.animator.GetCurrentAnimatorStateInfo(0);
+
+        float throwStart = Mathf.Clamp01(stateMachine.throwStartNormalizedTime);
+        float throwEnd = Mathf.Clamp01(stateMachine.throwEndNormalizedTime);
+
+        if (!hasThrown && info.normalizedTime >= throwStart)
+        {
+            stateMachine.OnThrowStart();
+            hasThrown = true;
+        }
+
+        if (!hasFinished && info.normalizedTime >= throwEnd)
+        {
+            hasFinished = true;
+            stateMachine.OnThrowFinish();
+        }
     }
 
     public override void Exit()
     {
-        Debug.Log("Exited Throwing State");
+        if (animationStarted && !hasThrown)
+        {
+            stateMachine.OnThrowStart();
+        }
     }
 
 }

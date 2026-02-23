@@ -25,12 +25,37 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public float rotationSpeed { get; private set; }
 
+    [field: SerializeField] public float throwSpinSpeed { get; private set; } = 1080f;
+
+    [field: SerializeField] public float throwInputDelay { get; private set; } = 0.1f;
+
+    [field: SerializeField] public float throwStartNormalizedTime { get; private set; } = 0.35f;
+
+    [field: SerializeField] public float throwEndNormalizedTime { get; private set; } = 0.9f;
+
+    [field: SerializeField] public float recallDuration { get; private set; } = 1.5f;
+
+    [field: SerializeField] public float recallEndDelay { get; private set; } = 0.2f;
+
+    [field: SerializeField] public float recallBlendTime { get; private set; } = 0.15f;
+
+    [field: SerializeField] public float aimBlendTime { get; private set; } = 0.12f;
+
+    [field: SerializeField] public float moveBlendTime { get; private set; } = 0.12f;
+
+    [field: SerializeField] public float aimMoveSpeedMultiplier { get; private set; } = 0.6f;
+
+    [field: SerializeField] public float maxAxeAngularSpeed { get; private set; } = 100f;
+
+    [field: SerializeField] public CrosshairUI crosshair { get; private set; }
+
     public bool AxeThrown;
 
     private Rigidbody rbAxe;
-    private Vector3 axeOldPos;
-    private bool isReturning = false;
-    private float time = 0.0f;
+    private Vector3 axeLocalPosition;
+    private Quaternion axeLocalRotation;
+
+    public Rigidbody AxeRigidbody => rbAxe;
 
     public Transform mainCam { get; private set; }
 
@@ -39,6 +64,9 @@ public class PlayerStateMachine : StateMachine
         mainCam = Camera.main.transform;
         rbAxe = Axe.GetComponent<Rigidbody>();
         rbAxe.isKinematic = true;
+        rbAxe.maxAngularVelocity = maxAxeAngularSpeed;
+        axeLocalPosition = Axe.localPosition;
+        axeLocalRotation = Axe.localRotation;
         SwitchState(new PlayerMoveState(this));
     }
 
@@ -51,22 +79,10 @@ public class PlayerStateMachine : StateMachine
 
     private void FixedUpdate()
     {
-        if (AxeThrown)
+        if (AxeThrown && !rbAxe.isKinematic)
         {
-            Axe.transform.localEulerAngles += Vector3.forward * rotationSpeed * Time.deltaTime;
-        }        
-
-        if(isReturning)
-        {
-            if (time < 1.0f)
-            {
-                Axe.position = getBezierCurvePoint(time, axeOldPos, curve_Point.position, target.position);
-                Axe.rotation = Quaternion.Slerp(Axe.transform.rotation,target.transform.rotation, 50 * Time.deltaTime);
-                time += Time.deltaTime;
-            }else
-            {
-                ResetAxe();
-            }
+            Vector3 localZAxis = rbAxe.transform.TransformDirection(Vector3.forward);
+            rbAxe.angularVelocity = localZAxis * throwSpinSpeed * Mathf.Deg2Rad;
         }
     }
 
@@ -76,10 +92,11 @@ public class PlayerStateMachine : StateMachine
         rbAxe.isKinematic = false;
         Axe.SetParent(null);
 
-        Vector3 forceToAdd = mainCam.transform.forward * throwForce;
+        Axe.rotation = Quaternion.LookRotation(mainCam.transform.forward, Vector3.up);
+        Axe.Rotate(Vector3.up, 90f, Space.Self);
 
+        Vector3 forceToAdd = mainCam.transform.forward * throwForce;
         rbAxe.AddForce(forceToAdd, ForceMode.Impulse);
-        Axe.transform.localEulerAngles += Vector3.forward * rotationSpeed * Time.deltaTime;
     }
 
     public void OnThrowFinsih()
@@ -87,30 +104,16 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerAimingState(this));
     }
 
-    public void RecallAxe()
+    public void OnThrowFinish()
     {
-        time = 0;
-        axeOldPos = Axe.transform.position;
-        isReturning = true;
-        rbAxe.velocity = Vector3.zero;
-        rbAxe.isKinematic = true;
-        AxeThrown = false;
+        OnThrowFinsih();
     }
 
     public void ResetAxe()
     {
-        isReturning = false;
-        Axe.position = target.position;
-        Axe.rotation = target.rotation;
-        Axe.transform.parent = target;
+        Axe.SetParent(target, false);
+        Axe.localPosition = axeLocalPosition;
+        Axe.localRotation = axeLocalRotation;
     }
 
-    private Vector3 getBezierCurvePoint(float t, Vector3 p0, Vector3 p1, Vector3 p2)
-    {
-        float u = 1 - t;
-        float tt = t * t;
-        float uu = u * u;
-        Vector3 p = (uu * p0) + (2 * u * t * p1) + (tt * p2);
-        return p;
-    }
 }

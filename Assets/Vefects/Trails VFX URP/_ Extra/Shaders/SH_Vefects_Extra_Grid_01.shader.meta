@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bdec76083a39a714aa7f996f954d5c23
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242574
+  packageName: Trails VFX - URP
+  packageVersion: 1.0.20251
+  assetPath: Assets/Vefects/Trails VFX URP/_ Extra/Shaders/SH_Vefects_Extra_Grid_01.shader
+  uploadId: 770211

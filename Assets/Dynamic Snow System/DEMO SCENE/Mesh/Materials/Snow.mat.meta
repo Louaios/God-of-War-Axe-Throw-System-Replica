@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bc8efe80bfe4aa6418456cf368048205
+timeCreated: 1511067800
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/DEMO SCENE/Mesh/Materials/Snow.mat
+  uploadId: 215782

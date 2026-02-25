@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c84decf69aae07943a5324c2c4d796de
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242574
+  packageName: Trails VFX - URP
+  packageVersion: 1.0.20251
+  assetPath: Assets/Vefects/Trails VFX URP/Demo/Resources/Character/Materials/M_Character_Base_01.mat
+  uploadId: 770211

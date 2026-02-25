@@ -36,7 +36,11 @@ public class PlayerRecallState : PlayerBaseState
             float t = Mathf.Clamp01(time / duration);
 
             stateMachine.Axe.position = GetBezierPoint(t, axeStartPos, stateMachine.curve_Point.position, stateMachine.target.position);
-            stateMachine.Axe.rotation = Quaternion.Slerp(stateMachine.Axe.rotation, stateMachine.target.rotation, 50f * deltaTime);
+            
+            // Apply spinning rotation like during throw
+            Vector3 localZAxis = stateMachine.Axe.TransformDirection(Vector3.forward);
+            float spinAmount = stateMachine.throwSpinSpeed * deltaTime;
+            stateMachine.Axe.Rotate(localZAxis, spinAmount, Space.World);
 
             if (t >= 1f)
             {

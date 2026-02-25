@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6039f24d835f24bad899c50fb054a4f1
+timeCreated: 1462255886
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62038
+  packageName: Realistic Hail Set
+  packageVersion: 1.0
+  assetPath: Assets/Realistic Hail Set/Demo Scene/Materials/Skybox.mat
+  uploadId: 115868

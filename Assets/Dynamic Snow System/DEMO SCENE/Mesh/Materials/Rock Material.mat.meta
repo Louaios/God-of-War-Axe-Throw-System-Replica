@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d89aa6f574a7501448a2ac27126dbea4
+timeCreated: 1512002134
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/DEMO SCENE/Mesh/Materials/Rock Material.mat
+  uploadId: 215782

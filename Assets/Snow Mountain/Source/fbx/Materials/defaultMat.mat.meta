@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5edd51db1a681f947a99246f5c23c923
+timeCreated: 1463116122
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 63002
+  packageName: Free Snow Mountain
+  packageVersion: 1.0
+  assetPath: Assets/Snow Mountain/Source/fbx/Materials/defaultMat.mat
+  uploadId: 118138

@@ -35,6 +35,8 @@ public class PlayerAimingState : PlayerBaseState
             return;
         }
 
+        FaceAimDirection(deltaTime);
+
         Vector3 movement = CalculateMovement();
         float moveScale = stateMachine.aimMoveSpeedMultiplier;
         stateMachine.charController.Move(movement * stateMachine.moveSpeed * moveScale * deltaTime);
@@ -45,7 +47,6 @@ public class PlayerAimingState : PlayerBaseState
             return;
         }
 
-        FaceMovementDir(movement, deltaTime);
         stateMachine.animator.SetFloat(moveSpeedHash, 1, AnimationDampTime, deltaTime);
     }
 
@@ -88,10 +89,18 @@ public class PlayerAimingState : PlayerBaseState
         return moveDir;
     }
 
-    private void FaceMovementDir(Vector3 movement, float deltaTime)
+    private void FaceAimDirection(float deltaTime)
     {
-        stateMachine.transform.rotation = Quaternion.Lerp(stateMachine.transform.rotation,
-            Quaternion.LookRotation(movement), deltaTime * stateMachine.rotationDamping);
+        Vector3 aimDirection = stateMachine.mainCam.transform.forward;
+        aimDirection.y = 0;
+        
+        if (aimDirection.sqrMagnitude > 0.001f)
+        {
+            aimDirection.Normalize();
+            Quaternion targetRotation = Quaternion.LookRotation(aimDirection);
+            stateMachine.transform.rotation = Quaternion.Slerp(stateMachine.transform.rotation,
+                targetRotation, deltaTime * stateMachine.rotationDamping);
+        }
     }
 
 }

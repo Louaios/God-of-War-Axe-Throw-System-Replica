@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 80055b809bdbb6b459297f4a1c11a8e0
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242574
+  packageName: Trails VFX - URP
+  packageVersion: 1.0.20251
+  assetPath: Assets/Vefects/Trails VFX URP/Demo/Resources/Character/Shaders/SH_Vefects_URP_VFX_Character_Showoff.shader
+  uploadId: 770211

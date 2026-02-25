@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9e345225a829cf94d8691e731b43056d
+timeCreated: 1510889044
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 13400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/New Physic Material.physicMaterial
+  uploadId: 215782

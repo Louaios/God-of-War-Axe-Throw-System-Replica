@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a5d85d4aae15646ac9e09fa27c16ee50
+timeCreated: 1462257420
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62038
+  packageName: Realistic Hail Set
+  packageVersion: 1.0
+  assetPath: Assets/Realistic Hail Set/Prefabs/Hail - Medium - NoExternalForces.prefab
+  uploadId: 115868

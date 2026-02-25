@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bbc01546613d0744f92d6bbde18f5eab
+timeCreated: 1511407256
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _GroundMap: {fileID: 8400000, guid: 2d373aff91d2ecc40a61e87b902acb50, type: 2}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/Shaders/Tesselated.shader
+  uploadId: 215782

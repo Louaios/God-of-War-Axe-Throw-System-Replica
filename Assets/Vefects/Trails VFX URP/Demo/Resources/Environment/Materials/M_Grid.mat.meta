@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fb8e74ba9a361a547b740de53bef303f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242574
+  packageName: Trails VFX - URP
+  packageVersion: 1.0.20251
+  assetPath: Assets/Vefects/Trails VFX URP/Demo/Resources/Environment/Materials/M_Grid.mat
+  uploadId: 770211

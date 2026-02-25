@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d4f79cf6f601e2540a9aec4854055acc
+timeCreated: 1511075672
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/Scripts/SnowBuffer.cs
+  uploadId: 215782

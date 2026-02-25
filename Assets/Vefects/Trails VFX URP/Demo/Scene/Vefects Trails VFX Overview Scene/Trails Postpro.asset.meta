@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 044a3871eeae7d8499b1a70696a493e4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242574
+  packageName: Trails VFX - URP
+  packageVersion: 1.0.20251
+  assetPath: Assets/Vefects/Trails VFX URP/Demo/Scene/Vefects Trails VFX Overview
+    Scene/Trails Postpro.asset
+  uploadId: 770211

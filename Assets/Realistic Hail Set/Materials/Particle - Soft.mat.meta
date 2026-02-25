@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 431571c83cfb64b43a4c6679bbcb6ddd
+timeCreated: 1462255886
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62038
+  packageName: Realistic Hail Set
+  packageVersion: 1.0
+  assetPath: Assets/Realistic Hail Set/Materials/Particle - Soft.mat
+  uploadId: 115868

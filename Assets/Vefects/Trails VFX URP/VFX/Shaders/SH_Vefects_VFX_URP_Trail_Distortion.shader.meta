@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 834ae074a7b95fe4aada98209b8bb4d0
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _IntensityMask: {fileID: 2800000, guid: fa6235bc65ac4064f8d49fcc0c8ff503, type: 3}
+  - _NoiseTexture: {fileID: 2800000, guid: 3327b545e30728e47b34b9588ff64aef, type: 3}
+  - _OpacityMask: {fileID: 2800000, guid: 171b695a70c8bb2439da87f69178c81b, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242574
+  packageName: Trails VFX - URP
+  packageVersion: 1.0.20251
+  assetPath: Assets/Vefects/Trails VFX URP/VFX/Shaders/SH_Vefects_VFX_URP_Trail_Distortion.shader
+  uploadId: 770211

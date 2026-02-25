@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a5d8d2106e2b23e4fa8e6a155b1cae1f
+timeCreated: 1511489918
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/Buffer.prefab
+  uploadId: 215782

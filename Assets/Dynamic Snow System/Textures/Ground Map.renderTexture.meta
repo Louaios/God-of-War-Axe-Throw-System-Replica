@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2d373aff91d2ecc40a61e87b902acb50
+timeCreated: 1510375744
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 8400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/Textures/Ground Map.renderTexture
+  uploadId: 215782

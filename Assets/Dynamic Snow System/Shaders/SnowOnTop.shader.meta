@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c21575d2fd44c744b9de41287b758738
+timeCreated: 1511924762
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _BumpMap: {fileID: 2800000, guid: 052bf0a69b497f146a872628fb3de11b, type: 3}
+  - _Texture: {fileID: 2800000, guid: 2251ef5ac8c9f794bac7fe2294c380f6, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 78148
+  packageName: Dynamic Snow System for Unity
+  packageVersion: 2
+  assetPath: Assets/Dynamic Snow System/Shaders/SnowOnTop.shader
+  uploadId: 215782
